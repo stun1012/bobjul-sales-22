@@ -43,19 +43,19 @@
         <article class="panel"><div class="panel-head"><div><p class="eyebrow">TARGETS</p><h3>1단계 핵심 고객군</h3></div></div><div class="target-list"><span>공개 버전<b>신규 영업 기회를 등록하세요</b></span><span>저장 방식<b>현재 브라우저에만 저장</b></span></div></article>
       </div>
 
-      <article class="panel"><div class="panel-head"><div><p class="eyebrow">PROJECT RADAR</p><h3>주요 프로젝트</h3></div><button class="text-btn" data-go="projects">프로젝트 관리 →</button></div><div class="table-wrap"><table><thead><tr><th>프로젝트</th><th>고객사</th><th>확인 요청 제품</th><th>진행 상태</th></tr></thead><tbody id="dashboard-projects"></tbody></table></div></article>
+      <article class="panel"><div class="panel-head"><div><p class="eyebrow">PROJECT RADAR</p><h3>주요 프로젝트</h3></div><button class="text-btn" data-go="projects">프로젝트 관리 →</button></div><div class="table-wrap"><table><thead><tr><th>사업명</th><th>현재 상태</th><th>확인 요청 제품</th><th>문의사항</th></tr></thead><tbody id="dashboard-projects"></tbody></table></div></article>
     </section>
 
     <section id="pipeline" class="view"><div class="section-intro"><div><p class="eyebrow">OPPORTUNITIES</p><h2>영업 파이프라인</h2><p>보안 인력과 솔루션 판매 기회를 단계별로 관리합니다.</p></div><button class="primary add-pipeline">＋ 기회 등록</button></div><div id="kanban" class="kanban"></div></section>
 
-    <section id="projects" class="view"><div class="section-intro"><div><p class="eyebrow">DELIVERY</p><h2>프로젝트 포트폴리오</h2><p>프로젝트명, 고객사, 확인 요청 제품을 중심으로 관리합니다.</p></div><button class="primary add-project">＋ 프로젝트 등록</button></div><div id="project-cards" class="project-cards"></div></section>
+    <section id="projects" class="view"><div class="section-intro"><div><p class="eyebrow">DELIVERY</p><h2>프로젝트 포트폴리오</h2><p>사업명, 현재 상태, 확인 요청 제품, 문의사항을 관리합니다.</p></div><button class="primary add-project">＋ 프로젝트 등록</button></div><div id="project-cards" class="project-cards"></div></section>
 
     <section id="people" class="view"><div class="section-intro"><div><p class="eyebrow">RESOURCE PLAN</p><h2>투입 인력 관리</h2><p>등급별 단가와 프로젝트 배치를 관리합니다.</p></div><button class="primary add-person">＋ 인력 등록</button></div><div class="panel"><div class="filters"><button class="chip active" data-filter="all">전체</button><button class="chip" data-filter="고급">고급</button><button class="chip" data-filter="중급">중급</button><button class="chip" data-filter="초급">초급</button><span id="people-summary"></span></div><div class="table-wrap"><table><thead><tr><th>성명</th><th>등급</th><th>소속 / 역할</th><th>배치 프로젝트</th><th>일정</th><th>단가(천원)</th><th>상태</th></tr></thead><tbody id="people-table"></tbody></table></div></div></section>
 
     <section id="solutions" class="view"><div class="section-intro"><div><p class="eyebrow">SECURITY CATALOG</p><h2>보안 솔루션</h2><p>고객 니즈가 높은 제휴 솔루션과 핵심 경쟁력을 영업 자료로 활용합니다.</p></div></div><div id="solution-cards" class="solution-cards"></div><article class="panel strategy"><div><p class="eyebrow">GO-TO-MARKET</p><h3>보안 사업 추진 방향</h3></div><div class="strategy-grid"><div><b>보안 인력 제공</b><p>모니터링, 보안성 심의, 취약점 진단, 시큐어코딩, 침해사고 대응훈련 인력을 소싱·제공</p></div><div><b>솔루션 판매</b><p>최근 고객 니드가 높은 국내외 솔루션 검토 및 제휴 확대</p></div><div><b>주요 제휴</b><p>제휴 정보를 등록하여 관리하세요</p></div></div></article></section>
   </main>
 
-  <dialog id="record-dialog"><form method="dialog" id="record-form"><div class="dialog-head"><div><p class="eyebrow">NEW RECORD</p><h3 id="dialog-title">신규 영업 기회</h3></div><button class="icon-btn" value="cancel" aria-label="닫기">×</button></div><input type="hidden" id="record-type" value="pipeline"><div id="form-fields" class="form-fields"></div><div class="dialog-actions"><button class="secondary" value="cancel">취소</button><button class="primary" id="save-record" value="default">저장</button></div></form></dialog>
+  <dialog id="record-dialog"><form method="dialog" id="record-form"><div class="dialog-head"><div><p class="eyebrow">NEW RECORD</p><h3 id="dialog-title">신규 영업 기회</h3></div><button class="icon-btn" value="cancel" formnovalidate aria-label="닫기">×</button></div><input type="hidden" id="record-type" value="pipeline"><div id="form-fields" class="form-fields"></div><div class="dialog-actions"><button class="secondary" value="cancel" formnovalidate>취소</button><button class="primary" id="save-record" value="default">저장</button></div></form></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
   <script src="app.js"></script>
 </body>
