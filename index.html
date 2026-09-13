@@ -33,10 +33,8 @@
       <div class="top-actions"><label class="search"><span>⌕</span><input id="global-search" aria-label="전체 검색" placeholder="회사명, 이름, 제품, 벤더 검색"></label><button id="search-btn" class="secondary">검색</button><button id="add-btn" class="primary">등록</button></div>
     </header>
 
-    <section id="directory" class="view"><div id="directory-results" class="table-wrap directory-table-wrap" tabindex="0" role="region" aria-label="등록 정보 목록"></div></section>
-    <section id="dashboard" class="view active">
-      <article class="panel"><div class="panel-head"><div><p class="eyebrow">PROJECT RADAR</p><h3>주요 프로젝트</h3></div><button class="text-btn" data-go="projects">프로젝트 관리 →</button></div><div class="table-wrap"><table><thead><tr><th>사업명</th><th>현재 상태</th><th>확인 요청 제품</th><th>문의사항</th></tr></thead><tbody id="dashboard-projects"></tbody></table></div></article>
-    </section>
+    <section id="dashboard" class="view active"><div id="directory-results" class="table-wrap directory-table-wrap" tabindex="0" role="region" aria-label="등록 정보 목록"></div></section>
+
 
     <section id="pipeline" class="view"><div class="section-intro"><div><p class="eyebrow">OPPORTUNITIES</p><h2>영업 파이프라인</h2><p>보안 인력과 솔루션 판매 기회를 단계별로 관리합니다.</p></div><button class="primary add-pipeline">＋ 기회 등록</button></div><div id="kanban" class="kanban"></div></section>
 
@@ -49,6 +47,6 @@
 
   <dialog id="record-dialog"><form method="dialog" id="record-form"><div class="dialog-head"><div><p class="eyebrow">NEW RECORD</p><h3 id="dialog-title">신규 영업 기회</h3></div><button class="icon-btn" value="cancel" formnovalidate aria-label="닫기">×</button></div><input type="hidden" id="record-type" value="pipeline"><div id="form-fields" class="form-fields"></div><div class="dialog-actions"><button class="secondary" value="cancel" formnovalidate>취소</button><button class="primary" id="save-record" value="default">저장</button></div></form></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=directory-table-2"></script>
+  <script src="app.js?v=sales-directory-1"></script>
 </body>
 </html>
