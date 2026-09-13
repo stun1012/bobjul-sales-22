@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="보안 솔루션, 영업 파이프라인, 프로젝트와 투입 인력을 한곳에서 관리합니다.">
+  <title>22기 영업관리시스템</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23071316'/%3E%3Cpath d='M8 22V12l8-4 8 4v10l-8 4z' fill='none' stroke='%2336d399' stroke-width='2'/%3E%3Cpath d='M12 17h8M16 13v8' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-mark">B</span><div><strong>BAPJUL</strong><small>SALES OPS · 22기</small></div></div>
+    <nav id="nav" aria-label="주 메뉴">
+      <button class="nav-item active" data-view="dashboard"><span>⌂</span>대시보드</button>
+      <button class="nav-item" data-view="pipeline"><span>◎</span>영업 파이프라인</button>
+      <button class="nav-item" data-view="projects"><span>▣</span>프로젝트</button>
+      <button class="nav-item" data-view="people"><span>♙</span>투입 인력</button>
+      <button class="nav-item" data-view="solutions"><span>◇</span>보안 솔루션</button>
+    </nav>
+    <div class="side-note"><span>영업 방향</span><p>보안 인력 제공 + 솔루션 판매</p><small>입력한 자료는 현재 브라우저에 저장됩니다.</small></div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div><p class="eyebrow">SALES CONTROL CENTER</p><h1 id="page-title">영업 현황</h1></div>
+      <div class="top-actions"><label class="search"><span>⌕</span><input id="global-search" aria-label="전체 검색" placeholder="고객사, 프로젝트, 담당자 검색"></label><button id="add-btn" class="primary">＋ 신규 영업</button></div>
+    </header>
+
+    <section id="dashboard" class="view active">
+      <div class="hero-grid">
+        <article class="spotlight"><div><p class="eyebrow mint">이번 달 핵심 지표</p><h2>프로젝트와 인력을<br>한눈에 통제하세요.</h2><p>엑셀에 분산된 프로젝트, 인력 MM, 단가와 보안 솔루션 정보를 하나의 흐름으로 연결했습니다.</p></div><div class="pulse"><b id="active-projects">0</b><span>진행·예정 프로젝트</span></div></article>
+        <div class="metric-grid">
+          <article class="metric"><span>예상 매출</span><strong id="total-revenue">₩0</strong><small>VAT 제외 · 등록 프로젝트 기준</small></article>
+        <article class="metric"><span>확인 요청 제품</span><strong id="total-products">0</strong><small>등록 프로젝트 기준</small></article>
+          <article class="metric"><span>관리 인력</span><strong id="total-people">0명</strong><small id="candidate-count">후보 0명 포함</small></article>
+          <article class="metric"><span>솔루션 포트폴리오</span><strong>3종</strong><small>Endpoint · DLP · AI DLP</small></article>
+        </div>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel pipeline-panel"><div class="panel-head"><div><p class="eyebrow">PIPELINE</p><h3>영업 단계별 현황</h3></div><button class="text-btn" data-go="pipeline">전체 보기 →</button></div><div id="stage-bars" class="stage-bars"></div></article>
+        <article class="panel"><div class="panel-head"><div><p class="eyebrow">TARGETS</p><h3>1단계 핵심 고객군</h3></div></div><div class="target-list"><span>공개 버전<b>신규 영업 기회를 등록하세요</b></span><span>저장 방식<b>현재 브라우저에만 저장</b></span></div></article>
+      </div>
+
+      <article class="panel"><div class="panel-head"><div><p class="eyebrow">PROJECT RADAR</p><h3>주요 프로젝트</h3></div><button class="text-btn" data-go="projects">프로젝트 관리 →</button></div><div class="table-wrap"><table><thead><tr><th>프로젝트</th><th>고객사</th><th>확인 요청 제품</th><th>진행 상태</th></tr></thead><tbody id="dashboard-projects"></tbody></table></div></article>
+    </section>
+
+    <section id="pipeline" class="view"><div class="section-intro"><div><p class="eyebrow">OPPORTUNITIES</p><h2>영업 파이프라인</h2><p>보안 인력과 솔루션 판매 기회를 단계별로 관리합니다.</p></div><button class="primary add-pipeline">＋ 기회 등록</button></div><div id="kanban" class="kanban"></div></section>
+
+    <section id="projects" class="view"><div class="section-intro"><div><p class="eyebrow">DELIVERY</p><h2>프로젝트 포트폴리오</h2><p>프로젝트명, 고객사, 확인 요청 제품을 중심으로 관리합니다.</p></div><button class="primary add-project">＋ 프로젝트 등록</button></div><div id="project-cards" class="project-cards"></div></section>
+
+    <section id="people" class="view"><div class="section-intro"><div><p class="eyebrow">RESOURCE PLAN</p><h2>투입 인력 관리</h2><p>등급별 단가와 프로젝트 배치를 관리합니다.</p></div><button class="primary add-person">＋ 인력 등록</button></div><div class="panel"><div class="filters"><button class="chip active" data-filter="all">전체</button><button class="chip" data-filter="고급">고급</button><button class="chip" data-filter="중급">중급</button><button class="chip" data-filter="초급">초급</button><span id="people-summary"></span></div><div class="table-wrap"><table><thead><tr><th>성명</th><th>등급</th><th>소속 / 역할</th><th>배치 프로젝트</th><th>일정</th><th>단가(천원)</th><th>상태</th></tr></thead><tbody id="people-table"></tbody></table></div></div></section>
+
+    <section id="solutions" class="view"><div class="section-intro"><div><p class="eyebrow">SECURITY CATALOG</p><h2>보안 솔루션</h2><p>고객 니즈가 높은 제휴 솔루션과 핵심 경쟁력을 영업 자료로 활용합니다.</p></div></div><div id="solution-cards" class="solution-cards"></div><article class="panel strategy"><div><p class="eyebrow">GO-TO-MARKET</p><h3>보안 사업 추진 방향</h3></div><div class="strategy-grid"><div><b>보안 인력 제공</b><p>모니터링, 보안성 심의, 취약점 진단, 시큐어코딩, 침해사고 대응훈련 인력을 소싱·제공</p></div><div><b>솔루션 판매</b><p>최근 고객 니드가 높은 국내외 솔루션 검토 및 제휴 확대</p></div><div><b>주요 제휴</b><p>제휴 정보를 등록하여 관리하세요</p></div></div></article></section>
+  </main>
+
+  <dialog id="record-dialog"><form method="dialog" id="record-form"><div class="dialog-head"><div><p class="eyebrow">NEW RECORD</p><h3 id="dialog-title">신규 영업 기회</h3></div><button class="icon-btn" value="cancel" aria-label="닫기">×</button></div><input type="hidden" id="record-type" value="pipeline"><div id="form-fields" class="form-fields"></div><div class="dialog-actions"><button class="secondary" value="cancel">취소</button><button class="primary" id="save-record" value="default">저장</button></div></form></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
