@@ -35,6 +35,7 @@ body{background:radial-gradient(ellipse at 78% 0%,#173854 0,transparent 45%),rad
 .overview-preview:hover,.overview-preview:focus{display:block;-webkit-line-clamp:unset;line-clamp:unset;max-height:none;overflow:visible;background:#204554;border-radius:5px;box-shadow:0 0 0 5px #204554;outline:2px solid #59bbff;outline-offset:5px}
 .sort-button{display:flex;align-items:center;gap:5px;width:100%;padding:0;background:none;border:0;color:inherit;font:inherit;font-weight:700;text-align:left;cursor:pointer}.sort-button span{color:#71d9eb;font-size:10px}.sort-button:hover{color:#72efcc}.sort-button:focus-visible{outline:2px solid #72efcc;outline-offset:4px}
 .directory-table th{padding:9px 12px}.directory-table td{padding:8px 12px;line-height:1.35}.directory-table .product-tag{padding:2px 6px}.directory-table td .secondary{padding:4px 8px;line-height:1.35}.overview-preview{max-height:4.05em}.overview-preview:hover,.overview-preview:focus{max-height:none}
+#import-dialog{width:min(960px,95vw);max-height:85vh;overflow:auto}#import-dialog p{color:#b8cdd6;font-size:14px}#import-preview{white-space:pre-wrap;max-height:40vh;overflow:auto;font-size:13px}#import-preview td{max-width:220px;white-space:pre-wrap;overflow-wrap:anywhere}.import-file{display:block;margin:18px 0}.import-file input{display:block;margin-top:8px}button:disabled{opacity:.4;cursor:not-allowed}
 </style></head>
 <body>
   <aside class="sidebar">
@@ -67,5 +68,7 @@ body{background:radial-gradient(ellipse at 78% 0%,#173854 0,transparent 45%),rad
   <div id="toast" role="status" aria-live="polite"></div>
   <script src="app.js?v=sort-hover-1"></script>
   <script src="export.js?v=1"></script>
+  <script>document.getElementById('export-btn').insertAdjacentHTML('afterend','<button type="button" id="import-btn" class="secondary">엑셀 업로드</button>');</script>
+  <script src="import.js?v=1"></script>
 </body>
 </html>
