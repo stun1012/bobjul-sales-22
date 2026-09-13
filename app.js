@@ -24,7 +24,8 @@ function renderDirectory(){
   const q=$('#global-search').value.trim().toLocaleLowerCase();
   const rows=(data.directory||[]).filter(r=>['company','name','product','vendor','overview','references'].some(k=>String(r[k]||'').toLocaleLowerCase().includes(q)));
   $('#directory-count').textContent=q?'검색 결과 '+rows.length+'건':'등록 정보 '+rows.length+'건';
-  $('#directory-results').innerHTML=rows.length?rows.map(r=>'<article class="project-card"><h3>'+escapeHtml(r.company)+'</h3><dl>'+[['name','이름'],['product','취급제품'],['vendor','벤더사명'],['overview','제품 개요'],['references','레퍼런스']].map(([k,label])=>'<dt>'+label+'</dt><dd>'+escapeHtml(r[k]||'-')+'</dd>').join('')+'</dl></article>').join(''):'<p class="empty-state">'+(q?'검색 결과가 없습니다. 다른 검색어를 입력해 주세요.':'아직 등록된 정보가 없습니다. 등록 버튼을 눌러 회사와 제품 정보를 추가하세요.')+'</p>';
+  const columns=[['company','회사명'],['name','이름'],['product','취급제품'],['vendor','벤더사명'],['overview','제품 개요'],['references','레퍼런스']];
+  $('#directory-results').innerHTML='<table class="directory-table" aria-label="회사 및 제품 등록 정보"><colgroup><col style="width:14%"><col style="width:10%"><col style="width:16%"><col style="width:14%"><col style="width:26%"><col style="width:20%"></colgroup><thead><tr>'+columns.map(([,label])=>'<th scope="col">'+label+'</th>').join('')+'</tr></thead><tbody>'+(rows.length?rows.map(r=>'<tr>'+columns.map(([key])=>'<td>'+escapeHtml(r[key]||'-')+'</td>').join('')+'</tr>').join(''):'<tr><td colspan="6">'+(q?'검색 결과가 없습니다. 다른 검색어를 입력해 주세요.':'아직 등록된 정보가 없습니다. 등록 버튼을 눌러 회사와 제품 정보를 추가하세요.')+'</td></tr>')+'</tbody></table>';
 }
 function searchDirectory(){renderDirectory();go('directory')}
 
