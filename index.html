@@ -34,21 +34,6 @@
 
     <section id="directory" class="view"><div class="section-intro"><div><p class="eyebrow">COMPANY &amp; PRODUCTS</p><h2>등록 정보</h2><p id="directory-count" role="status"></p></div><button id="directory-add" class="primary">등록</button></div><div id="directory-results" class="project-cards"></div></section>
     <section id="dashboard" class="view active">
-      <div class="hero-grid">
-        <article class="spotlight"><div><p class="eyebrow mint">이번 달 핵심 지표</p><h2>프로젝트와 인력을<br>한눈에 통제하세요.</h2><p>엑셀에 분산된 프로젝트, 인력 MM, 단가와 보안 솔루션 정보를 하나의 흐름으로 연결했습니다.</p></div><div class="pulse"><b id="active-projects">0</b><span>진행·예정 프로젝트</span></div></article>
-        <div class="metric-grid">
-          <article class="metric"><span>예상 매출</span><strong id="total-revenue">₩0</strong><small>VAT 제외 · 등록 프로젝트 기준</small></article>
-        <article class="metric"><span>확인 요청 제품</span><strong id="total-products">0</strong><small>등록 프로젝트 기준</small></article>
-          <article class="metric"><span>관리 인력</span><strong id="total-people">0명</strong><small id="candidate-count">후보 0명 포함</small></article>
-          <article class="metric"><span>솔루션 포트폴리오</span><strong>3종</strong><small>Endpoint · DLP · AI DLP</small></article>
-        </div>
-      </div>
-
-      <div class="content-grid">
-        <article class="panel pipeline-panel"><div class="panel-head"><div><p class="eyebrow">PIPELINE</p><h3>영업 단계별 현황</h3></div><button class="text-btn" data-go="pipeline">전체 보기 →</button></div><div id="stage-bars" class="stage-bars"></div></article>
-        <article class="panel"><div class="panel-head"><div><p class="eyebrow">TARGETS</p><h3>1단계 핵심 고객군</h3></div></div><div class="target-list"><span>공개 버전<b>신규 영업 기회를 등록하세요</b></span><span>저장 방식<b>현재 브라우저에만 저장</b></span></div></article>
-      </div>
-
       <article class="panel"><div class="panel-head"><div><p class="eyebrow">PROJECT RADAR</p><h3>주요 프로젝트</h3></div><button class="text-btn" data-go="projects">프로젝트 관리 →</button></div><div class="table-wrap"><table><thead><tr><th>사업명</th><th>현재 상태</th><th>확인 요청 제품</th><th>문의사항</th></tr></thead><tbody id="dashboard-projects"></tbody></table></div></article>
     </section>
 
@@ -63,6 +48,6 @@
 
   <dialog id="record-dialog"><form method="dialog" id="record-form"><div class="dialog-head"><div><p class="eyebrow">NEW RECORD</p><h3 id="dialog-title">신규 영업 기회</h3></div><button class="icon-btn" value="cancel" formnovalidate aria-label="닫기">×</button></div><input type="hidden" id="record-type" value="pipeline"><div id="form-fields" class="form-fields"></div><div class="dialog-actions"><button class="secondary" value="cancel" formnovalidate>취소</button><button class="primary" id="save-record" value="default">저장</button></div></form></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=directory-1"></script>
+  <script src="app.js?v=dashboard-clean-1"></script>
 </body>
 </html>
