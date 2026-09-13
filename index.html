@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="보안 솔루션, 영업 파이프라인, 프로젝트와 투입 인력을 한곳에서 관리합니다.">
-  <title>22기 영업관리시스템</title>
+  <title>ITPM 22기 영업관리</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23071316'/%3E%3Cpath d='M8 22V12l8-4 8 4v10l-8 4z' fill='none' stroke='%2336d399' stroke-width='2'/%3E%3Cpath d='M12 17h8M16 13v8' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css?v=directory-1">
 <style>
@@ -13,27 +13,28 @@
 .empty-state{grid-column:1/-1;color:var(--muted);padding:24px;border:1px dashed var(--line);border-radius:12px}
 .top-actions{flex-wrap:wrap}#search-btn,#add-btn{white-space:nowrap}
 @media(min-width:721px) and (max-width:1050px){body{grid-template-columns:160px 1fr}.nav-item,.nav-item:not(.active){font-size:13px;text-align:left;padding:12px 8px}.nav-item span{display:inline-block;width:22px}.brand div{font-size:12px}.side-note{display:none}}
-@media(max-width:720px){.sidebar{height:78px;overflow-x:auto}.sidebar nav{grid-template-columns:repeat(3,minmax(68px,1fr))}.nav-item,.nav-item:not(.active){font-size:10px;padding:8px 2px}.nav-item span{font-size:17px}.search{min-width:150px}.search input{min-width:0}main{padding-bottom:100px}}
+@media(max-width:720px){.sidebar{height:78px;overflow-x:auto}.sidebar nav{grid-template-columns:repeat(2,minmax(68px,1fr))}.nav-item,.nav-item:not(.active){font-size:10px;padding:8px 2px}.nav-item span{font-size:17px}.search{min-width:150px}.search input{min-width:0}main{padding-bottom:100px}}
 .directory-table-wrap{border:1px solid var(--line);border-radius:12px;background:var(--surface);width:100%}main{min-width:0}
 .directory-table{table-layout:fixed;min-width:1000px}.directory-table th{background:var(--surface2);font-size:13px;color:var(--text)}.directory-table th,.directory-table td{border-right:1px solid var(--line);vertical-align:top}.directory-table th:last-child,.directory-table td:last-child{border-right:0}.directory-table td{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.6}.directory-table tbody tr:nth-child(even){background:rgba(255,255,255,.025)}
+.sales-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:8px 0 28px}.summary-tile{padding:22px;background:linear-gradient(135deg,#102b30,#0d2024);border:1px solid var(--line);border-radius:14px;border-top:3px solid var(--mint)}.summary-tile span{display:block;color:var(--muted);font-size:13px}.summary-tile strong{display:block;font-size:32px;margin-top:10px}.list-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.list-heading h2{margin:0;font-size:20px}.list-heading span{font-size:13px;color:var(--muted)}.directory-table tbody tr:hover{background:#17343a}.directory-table td:first-child{color:var(--mint);font-weight:800}.directory-table td:nth-child(2){font-weight:750}.directory-table td .secondary{padding:7px 10px;font-size:12px}.directory-table th{position:sticky;top:0;z-index:1}.directory-table-wrap{max-height:65vh}.product-tag{display:inline-block;padding:4px 8px;border-radius:6px;background:#174137;color:#71edba;font-weight:650}@media(max-width:720px){.sales-summary{grid-template-columns:repeat(2,1fr);gap:10px}.summary-tile{padding:16px}.summary-tile strong{font-size:26px}}
+.overview-preview{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;line-clamp:3;overflow:hidden;max-height:4.8em;cursor:help;white-space:pre-wrap}.overview-preview:focus{outline:2px solid var(--mint)}
 </style></head>
 <body>
   <aside class="sidebar">
-    <div class="brand"><span class="brand-mark">B</span><div><strong>BAPJUL</strong><small>SALES OPS · 22기</small></div></div>
+    <div class="brand"><span class="brand-mark">I</span><div><strong>ITPM</strong><small>22기 영업관리</small></div></div>
     <nav id="nav" aria-label="주 메뉴">
       <button id="nav-register" class="nav-item register-nav"><span>＋</span>등록</button>
       <button class="nav-item active" data-view="dashboard"><span>⌂</span>22기 영업</button>
-      <button class="nav-item" data-view="solutions"><span>◇</span>보안 솔루션</button>
     </nav>
   </aside>
 
   <main>
     <header class="topbar">
       <div><p class="eyebrow">SALES CONTROL CENTER</p><h1 id="page-title">22기 영업</h1></div>
-      <div class="top-actions"><label class="search"><span>⌕</span><input id="global-search" aria-label="전체 검색" placeholder="회사명, 이름, 제품, 벤더 검색"></label><button id="search-btn" class="secondary">검색</button><button id="add-btn" class="primary">등록</button></div>
+      <div class="top-actions"><label class="search"><span>⌕</span><input id="global-search" aria-label="전체 검색" placeholder="회사명, 이름, 제품, 벤더 검색"></label><button id="search-btn" class="secondary">검색</button><button id="export-btn" class="secondary" title="현재 검색 결과를 엑셀 파일로 다운로드">엑셀 다운로드</button><button id="add-btn" class="primary">등록</button></div>
     </header>
 
-    <section id="dashboard" class="view active"><div id="directory-results" class="table-wrap directory-table-wrap" tabindex="0" role="region" aria-label="등록 정보 목록"></div></section>
+    <section id="dashboard" class="view active"><div id="sales-summary" class="sales-summary" aria-label="등록 현황 요약"></div><div class="list-heading"><h2>회사·제품 목록</h2><span id="sales-result-count" role="status"></span></div><div id="directory-results" class="table-wrap directory-table-wrap" tabindex="0" role="region" aria-label="등록 정보 목록"></div></section>
 
 
     <section id="pipeline" class="view"><div class="section-intro"><div><p class="eyebrow">OPPORTUNITIES</p><h2>영업 파이프라인</h2><p>보안 인력과 솔루션 판매 기회를 단계별로 관리합니다.</p></div><button class="primary add-pipeline">＋ 기회 등록</button></div><div id="kanban" class="kanban"></div></section>
@@ -47,6 +48,7 @@
 
   <dialog id="record-dialog"><form method="dialog" id="record-form"><div class="dialog-head"><div><p class="eyebrow">NEW RECORD</p><h3 id="dialog-title">신규 영업 기회</h3></div><button class="icon-btn" value="cancel" formnovalidate aria-label="닫기">×</button></div><input type="hidden" id="record-type" value="pipeline"><div id="form-fields" class="form-fields"></div><div class="dialog-actions"><button class="secondary" value="cancel" formnovalidate>취소</button><button class="primary" id="save-record" value="default">저장</button></div></form></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=sales-directory-1"></script>
+  <script src="app.js?v=itpm-final-1"></script>
+  <script src="export.js?v=1"></script>
 </body>
 </html>
