@@ -32,6 +32,8 @@ body{background:radial-gradient(ellipse at 78% 0%,#173854 0,transparent 45%),rad
 @media(min-width:721px) and (max-width:1050px){.brand{gap:8px;flex-wrap:wrap}.brand div{display:block}.brand strong,.brand small{font-size:17px}}
 @media(max-width:720px){.summary-tile strong{font-size:28px}.topbar{padding-bottom:16px}.sidebar{background:#102735}}
 
+.overview-preview:hover,.overview-preview:focus{display:block;-webkit-line-clamp:unset;line-clamp:unset;max-height:none;overflow:visible;background:#204554;border-radius:5px;box-shadow:0 0 0 5px #204554;outline:2px solid #59bbff;outline-offset:5px}
+.sort-button{display:flex;align-items:center;gap:5px;width:100%;padding:0;background:none;border:0;color:inherit;font:inherit;font-weight:700;text-align:left;cursor:pointer}.sort-button span{color:#71d9eb;font-size:10px}.sort-button:hover{color:#72efcc}.sort-button:focus-visible{outline:2px solid #72efcc;outline-offset:4px}
 </style></head>
 <body>
   <aside class="sidebar">
@@ -62,7 +64,7 @@ body{background:radial-gradient(ellipse at 78% 0%,#173854 0,transparent 45%),rad
 
   <dialog id="record-dialog"><form method="dialog" id="record-form"><div class="dialog-head"><div><p class="eyebrow">NEW RECORD</p><h3 id="dialog-title">신규 영업 기회</h3></div><button class="icon-btn" value="cancel" formnovalidate aria-label="닫기">×</button></div><input type="hidden" id="record-type" value="pipeline"><div id="form-fields" class="form-fields"></div><div class="dialog-actions"><button class="secondary" value="cancel" formnovalidate>취소</button><button class="primary" id="save-record" value="default">저장</button></div></form></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=itpm-final-1"></script>
+  <script src="app.js?v=sort-hover-1"></script>
   <script src="export.js?v=1"></script>
 </body>
 </html>
